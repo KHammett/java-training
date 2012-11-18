@@ -2,6 +2,9 @@ package by.gsu.epamlab;
 
 import java.lang.reflect.Array;
 
+import by.gsu.epamlab.beans.PriceDiscountPurchase;
+import by.gsu.epamlab.beans.Purchase;
+
 public class PurchaseFactory {
 	private final static int GENERAL_PURCHASE_ARGC = 3;
 	private final static int DISCOUNT_PURCHASE_ARGC = 4;

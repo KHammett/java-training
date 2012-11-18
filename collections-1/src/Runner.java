@@ -2,6 +2,7 @@ import java.lang.reflect.Array;
 import java.util.Comparator;
 
 import by.gsu.epamlab.*;
+import by.gsu.epamlab.beans.Purchase;
 
 public class Runner {
 	/**

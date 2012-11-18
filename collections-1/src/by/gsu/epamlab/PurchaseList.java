@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.*;
 
+import by.gsu.epamlab.beans.Purchase;
+
 public class PurchaseList {
 	final static String EXTENSION = ".csv";
 	final static String SEMICOLON = ";";

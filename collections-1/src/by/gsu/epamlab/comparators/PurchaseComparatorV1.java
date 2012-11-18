@@ -2,7 +2,7 @@ package by.gsu.epamlab.comparators;
 
 import java.util.Comparator;
 
-import by.gsu.epamlab.*;
+import by.gsu.epamlab.beans.*;
 
 public class PurchaseComparatorV1 implements Comparator<Purchase> {
 

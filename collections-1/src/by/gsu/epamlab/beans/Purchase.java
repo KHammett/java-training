@@ -1,4 +1,4 @@
-package by.gsu.epamlab;
+package by.gsu.epamlab.beans;
 
 
 public class Purchase {
@@ -13,8 +13,8 @@ public class Purchase {
 	public Purchase(String commodityName, int price, int quantity) {
 		super();
 		this.commodityName = commodityName;
-		this.price = price;
-		this.quantity = quantity;
+		setPrice(price);
+		setQuantity(quantity);
 	}
 
 	public String getCommodityName() {
