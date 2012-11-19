@@ -1,5 +1,6 @@
 package by.gsu.epamlab.beans;
 
+import by.gsu.epamlab.exceptions.NonpositiveArgumentException;
 
 public class Purchase {
 	private String commodityName;
@@ -12,7 +13,7 @@ public class Purchase {
 
 	public Purchase(String commodityName, int price, int quantity) {
 		super();
-		this.commodityName = commodityName;
+		setCommodityName(commodityName);
 		setPrice(price);
 		setQuantity(quantity);
 	}
@@ -22,6 +23,9 @@ public class Purchase {
 	}
 
 	public void setCommodityName(String commodityName) {
+		if ("".equals(commodityName)) {
+			throw new IllegalArgumentException("Empty string field!");
+		}
 		this.commodityName = commodityName;
 	}
 
@@ -31,7 +35,7 @@ public class Purchase {
 
 	public void setPrice(int price) {
 		if (price < 0) {
-			throw new IllegalArgumentException();
+			throw new NonpositiveArgumentException(price, "price field");
 		}
 		this.price = price;
 	}
@@ -42,7 +46,7 @@ public class Purchase {
 
 	public void setQuantity(int quantity) {
 		if (quantity < 0) {
-			throw new IllegalArgumentException();
+			throw new NonpositiveArgumentException(quantity, "quantity field");
 		}
 		this.quantity = quantity;
 	}
@@ -57,7 +61,6 @@ public class Purchase {
 	}
 
 	public boolean equals(Purchase other) {
-		// TODO @Override?
 		if (this == other)
 			return true;
 		if (other == null)

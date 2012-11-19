@@ -1,7 +1,6 @@
 package by.gsu.epamlab.comparators;
 
 import java.util.Comparator;
-import by.gsu.epamlab.*;
 import by.gsu.epamlab.beans.Purchase;
 
 public class PurchaseComparatorV2 implements Comparator<Purchase> {

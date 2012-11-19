@@ -1,5 +1,7 @@
 package by.gsu.epamlab.beans;
 
+import by.gsu.epamlab.exceptions.NonpositiveArgumentException;
+
 public class PriceDiscountPurchase extends Purchase {
 	private int discount;
 
@@ -11,7 +13,7 @@ public class PriceDiscountPurchase extends Purchase {
 	public PriceDiscountPurchase(String commodityName, int price, int quantity,
 			int discount) {
 		super(commodityName, price, quantity);
-		this.discount = discount;
+		setDiscount(discount);
 	}
 
 	public int getDiscount() {
@@ -20,7 +22,7 @@ public class PriceDiscountPurchase extends Purchase {
 
 	public void setDiscount(int discount) {
 		if (discount < 0) {
-			throw new IllegalArgumentException();
+			throw new NonpositiveArgumentException(discount, "discount field");
 		}
 		this.discount = discount;
 	}
