@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.util.*;
 
 import by.gsu.epamlab.beans.Purchase;
+import by.gsu.epamlab.exceptions.CSVLineException;
 
 public class PurchaseList {
 	final static String EXTENSION = ".csv";
@@ -23,12 +24,13 @@ public class PurchaseList {
 					+ EXTENSION));
 
 			String line;
-			Purchase purchase;
 
 			while (sc.hasNext()) {
 				line = sc.nextLine();
-				if ((purchase = PurchaseFactory.getClassFromFactory(line)) != null) {
-					purchases.add(purchase);
+				try {
+					purchases.add(PurchaseFactory.getClassFromFactory(line));
+				} catch (CSVLineException e) {
+					System.err.println(e.getMessage());
 				}
 			}
 
