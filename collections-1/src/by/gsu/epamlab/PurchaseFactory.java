@@ -12,7 +12,7 @@ public class PurchaseFactory {
 	private final static int QUANTITY_POSITION = 2;
 	private final static int DISCOUNT_POSITION = 3;
 
-	public static Purchase getClassFromFactory(String line) {
+	public static Purchase getClassFromFactory(String line) throws CSVLineException {
 		String[] items = line.split(";");
 		try {
 			String name = items[NAME_POSITION];
