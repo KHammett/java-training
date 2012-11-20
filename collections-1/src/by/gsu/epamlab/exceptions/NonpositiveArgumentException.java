@@ -1,7 +1,7 @@
 package by.gsu.epamlab.exceptions;
 
 @SuppressWarnings("serial")
-public class NonpositiveArgumentException extends IllegalStateException {
+public class NonpositiveArgumentException extends IllegalArgumentException {
 	private final String place;
 	private final int nonpositiveValue;
 	
